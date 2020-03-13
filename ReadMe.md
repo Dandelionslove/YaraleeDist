@@ -1,3 +1,3 @@
-Just open the **index.html** in the browser, you will see the website.
+Just open the **index.html** in the browser, the website will show.
 file dir:
 ***dist/deploy/index.html***
