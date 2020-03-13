@@ -1,15 +1,12 @@
-// app.js
-const fs = require('fs');
-const path = require('path');
-const express = require('express');
-const chalk = require('chalk')
+const express = require('express'); //npm下载并引入express模块 npm -express -D
+
 const app = express();
-app.use(express.static(path.resolve(__dirname, './dist/deploy')))
- 
-app.get('*', function(req, res) {
-    const html = fs.readFileSync(path.resolve(__dirname, './dist/deploy/index.html'), 'utf-8')
-    res.send(html)
+app.use(express.stitic('./dist')) // ./dist 为vue打包后dist文件夹的路径
+app.listen(8080,function(err){  //8080 想要监听项目的端口号
+	if(err){
+		console.log(err)
+	}else {
+		console.log("start successful");
+	}
 })
-app.listen(8080, res => {
-  console.log(chalk.yellow('Start Service On 8080'));
-});
+
